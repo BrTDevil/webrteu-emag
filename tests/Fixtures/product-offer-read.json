@@ -1,0 +1,42 @@
+{
+    "isError": false,
+    "messages": [],
+    "results": [
+        {
+            "id": 1001,
+            "category_id": 506,
+            "part_number": "TRC-RED-M",
+            "part_number_key": "D5ABC12BM",
+            "name": "Tricou bumbac roșu M",
+            "brand": "WeBRT",
+            "description": "<p>Tricou din bumbac 100%.</p>",
+            "url": "https://www.emag.ro/tricou/pd/D5ABC12BM/",
+            "family": {"id": 77, "name": "Tricou bumbac", "family_type_id": 9},
+            "sale_price": "49.9900",
+            "recommended_price": "59.99",
+            "general_stock": 12,
+            "status": 1,
+            "ean": ["5940000000017", ""],
+            "images": [
+                {"display_type": 2, "url": "https://s13emagst.akamaized.net/products/1/spate.JPG"},
+                {"display_type": 1, "url": "https://s13emagst.akamaized.net/products/1/fata.jpg"},
+                {"display_type": 1, "url": "https://s13emagst.akamaized.net/products/1/fata.jpg"}
+            ],
+            "characteristics": [
+                {"id": 6506, "value": "M", "tag": "original"},
+                {"id": 7000, "value": "Roșu"},
+                {"id": 8100, "value": "Bumbac"}
+            ]
+        },
+        {
+            "id": 1002,
+            "category_id": 506,
+            "part_number": "TRC-RED-L",
+            "name": "Tricou bumbac roșu L",
+            "family": {"id": 77, "name": "Tricou bumbac", "family_type_id": 9},
+            "sale_price": 49.99,
+            "images": [{"display_type": 1, "url": "https://s13emagst.akamaized.net/products/2/fata.webp"}],
+            "characteristics": [{"id": 6506, "value": "L"}, {"id": 7000, "value": "Roșu"}]
+        }
+    ]
+}

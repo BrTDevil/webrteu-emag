@@ -1,0 +1,63 @@
+<?php
+
+declare(strict_types=1);
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('emag_products', function (Blueprint $table): void {
+            $table->id();
+            $table->unsignedBigInteger('emag_id')->unique();
+            $table->string('part_number')->nullable()->index();
+            $table->string('part_number_key')->nullable()->index();
+            $table->string('name');
+            $table->string('brand')->nullable();
+            $table->longText('description')->nullable();
+            $table->unsignedBigInteger('category_id')->nullable()->index();
+            $table->unsignedBigInteger('family_id')->nullable()->index();
+            $table->string('family_name')->nullable();
+            $table->unsignedBigInteger('family_type_id')->nullable();
+            $table->decimal('sale_price', 12, 4)->nullable();
+            $table->decimal('recommended_price', 12, 4)->nullable();
+            $table->integer('general_stock')->nullable();
+            $table->unsignedTinyInteger('status')->nullable();
+            $table->string('url')->nullable();
+            $table->json('ean')->nullable();
+            $table->json('raw')->nullable();
+            $table->timestamps();
+        });
+
+        Schema::create('emag_product_characteristics', function (Blueprint $table): void {
+            $table->id();
+            $table->foreignId('emag_product_id')->constrained('emag_products')->cascadeOnDelete();
+            $table->unsignedBigInteger('characteristic_id');
+            $table->string('name')->nullable();
+            $table->text('value');
+            $table->string('tag')->nullable();
+            $table->boolean('is_option')->default(false);
+            $table->timestamps();
+        });
+
+        Schema::create('emag_product_images', function (Blueprint $table): void {
+            $table->id();
+            $table->foreignId('emag_product_id')->constrained('emag_products')->cascadeOnDelete();
+            $table->string('url', 1024);
+            $table->unsignedTinyInteger('display_type')->default(0);
+            $table->unsignedInteger('position')->default(0);
+            $table->string('path')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('emag_product_images');
+        Schema::dropIfExists('emag_product_characteristics');
+        Schema::dropIfExists('emag_products');
+    }
+};

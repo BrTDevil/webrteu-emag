@@ -1,0 +1,20 @@
+{
+    "isError": false,
+    "messages": [],
+    "results": [
+        {
+            "id": 506,
+            "name": "Tricouri",
+            "characteristics": [
+                {"id": 6506, "name": "Mărime", "type_id": 20},
+                {"id": 7000, "name": "Culoare", "type_id": 1},
+                {"id": 8100, "name": "Material", "type_id": 1},
+                {"id": "x", "name": "Fără id"}
+            ],
+            "family_types": [
+                {"id": 9, "name": "Mărime + Culoare", "characteristics": [{"characteristic_id": 6506}, {"characteristic_id": 7000}, "invalid"]},
+                {"name": "Fără id"}
+            ]
+        }
+    ]
+}
